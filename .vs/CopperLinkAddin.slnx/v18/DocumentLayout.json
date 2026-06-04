@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ziada\\source\\repos\\CopperLinkAddin\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{476B4BD2-AC77-4FF6-952D-083F121E5374}|CopperLinkAddin\\CopperLinkAddin.csproj|c:\\users\\ziada\\source\\repos\\copperlinkaddin\\copperlinkaddin\\forms\\busbarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{476B4BD2-AC77-4FF6-952D-083F121E5374}|CopperLinkAddin\\CopperLinkAddin.csproj|solutionrelative:copperlinkaddin\\forms\\busbarform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BusbarForm.cs",
+              "DocumentMoniker": "C:\\Users\\ziada\\source\\repos\\CopperLinkAddin\\CopperLinkAddin\\Forms\\BusbarForm.cs",
+              "RelativeDocumentMoniker": "CopperLinkAddin\\Forms\\BusbarForm.cs",
+              "ToolTip": "C:\\Users\\ziada\\source\\repos\\CopperLinkAddin\\CopperLinkAddin\\Forms\\BusbarForm.cs",
+              "RelativeToolTip": "CopperLinkAddin\\Forms\\BusbarForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-04T13:35:05.366Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

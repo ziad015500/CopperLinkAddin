@@ -1,0 +1,7 @@
+C:\Users\ziada\source\repos\CopperLinkAddin\CopperLinkAddin\bin\Debug\CopperLinkAddin.dll
+C:\Users\ziada\source\repos\CopperLinkAddin\CopperLinkAddin\bin\Debug\CopperLinkAddin.pdb
+C:\Users\ziada\source\repos\CopperLinkAddin\CopperLinkAddin\obj\Debug\CopperLinkAddin.csproj.AssemblyReference.cache
+C:\Users\ziada\source\repos\CopperLinkAddin\CopperLinkAddin\obj\Debug\CopperLinkAddin.csproj.CoreCompileInputs.cache
+C:\Users\ziada\source\repos\CopperLinkAddin\CopperLinkAddin\obj\Debug\CopperLinkAddin.dll
+C:\Users\ziada\source\repos\CopperLinkAddin\CopperLinkAddin\obj\Debug\CopperLinkAddin.pdb
+C:\Users\ziada\source\repos\CopperLinkAddin\CopperLinkAddin\bin\Debug\Icons\busbar.bmp
