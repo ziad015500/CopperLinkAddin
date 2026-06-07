@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using SolidWorks.Interop.sldworks;
 using SolidWorks.Interop.swconst;
 using SolidWorks.Interop.swpublished;
+using CopperLinkAddin.Forms;
 
 namespace CopperLinkAddin
 {
@@ -15,6 +16,9 @@ namespace CopperLinkAddin
         private int addinID;
         private ICommandManager iCmdMgr;
         private ITaskpaneView taskPane;
+        private Timer initTimer;
+        private UserControl taskPaneControl;
+        private Button btnCreate;
 
         public bool ConnectToSW(object ThisSW, int Cookie)
         {
@@ -24,21 +28,10 @@ namespace CopperLinkAddin
                 addinID = Cookie;
                 iCmdMgr = iSwApp.GetCommandManager(Cookie);
 
-                string iconPath = System.IO.Path.Combine(
-                    System.IO.Path.GetDirectoryName(
-                        System.Reflection.Assembly.GetExecutingAssembly().Location),
-                    "Icons\\busbar.bmp");
-
-                taskPane = iSwApp.CreateTaskpaneView2(iconPath, "CopperLink");
-
-                UserControl uc = new UserControl();
-                Button btn = new Button();
-                btn.Text = "Create Busbar";
-                btn.Dock = DockStyle.Top;
-                btn.Click += (s, e) => OnCreateBusbar();
-                uc.Controls.Add(btn);
-
-                taskPane.DisplayWindowFromHandle(uc.Handle.ToInt32());
+                initTimer = new Timer();
+                initTimer.Interval = 3000;
+                initTimer.Tick += OnTimerTick;
+                initTimer.Start();
 
                 return true;
             }
@@ -46,6 +39,44 @@ namespace CopperLinkAddin
             {
                 MessageBox.Show("Error: " + ex.Message);
                 return false;
+            }
+        }
+
+        private void OnTimerTick(object sender, EventArgs e)
+        {
+            initTimer.Stop();
+            initTimer.Dispose();
+
+            try
+            {
+                string iconPath = System.IO.Path.Combine(
+                    System.IO.Path.GetDirectoryName(
+                        System.Reflection.Assembly.GetExecutingAssembly().Location),
+                    "Icons\\busbar.bmp");
+
+                taskPane = iSwApp.CreateTaskpaneView2(iconPath, "CopperLink");
+
+                taskPaneControl = new UserControl();
+                taskPaneControl.Width = 200;
+                taskPaneControl.Height = 400;
+
+                btnCreate = new Button();
+                btnCreate.Text = "Create Busbar";
+                btnCreate.Dock = DockStyle.Top;
+                btnCreate.Height = 35;
+                btnCreate.Click += (s, ev) => OnCreateBusbar();
+                taskPaneControl.Controls.Add(btnCreate);
+
+                taskPaneControl.Resize += (s, ev) =>
+                {
+                    btnCreate.Width = taskPaneControl.Width;
+                };
+
+                taskPane.DisplayWindowFromHandle(taskPaneControl.Handle.ToInt32());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading UI: " + ex.Message);
             }
         }
 
@@ -63,7 +94,8 @@ namespace CopperLinkAddin
 
         public void OnCreateBusbar()
         {
-            MessageBox.Show("Busbar Form هيتفتح هنا!");
+            BusbarForm form = new BusbarForm(iSwApp);
+            form.ShowDialog();
         }
     }
 }

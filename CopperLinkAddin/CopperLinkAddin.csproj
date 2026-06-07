@@ -63,17 +63,32 @@
     <Compile Include="Forms\BusbarForm.Designer.cs">
       <DependentUpon>BusbarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HoleForm.Designer.cs">
+      <DependentUpon>HoleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\BusbarModel.cs" />
+    <Compile Include="Models\HoleModel.cs" />
     <Compile Include="RegisterAddin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Services\" />
+    <Compile Include="Services\BusbarService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons\busbar.bmp">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <EmbeddedResource Include="Images\L_Shape_Edge_AL.PNG" />
+    <EmbeddedResource Include="Images\L_Shape_Edge_CU.PNG" />
+    <EmbeddedResource Include="Images\L_Shape_Flat_Bend_AL.PNG" />
+    <EmbeddedResource Include="Images\L_Shape_Flat_Bend_CU.PNG" />
+    <EmbeddedResource Include="Images\Straight_Bar_AL.PNG" />
+    <EmbeddedResource Include="Images\Straight_Bar_CU.PNG" />
+    <EmbeddedResource Include="Images\Z_Shape_Edge_AL.PNG" />
+    <EmbeddedResource Include="Images\Z_Shape_Edge_CU.PNG" />
+    <EmbeddedResource Include="Images\Z_Shape_Flat_Bend_AL.PNG" />
+    <EmbeddedResource Include="Images\Z_Shape_Flat_Bend_CU.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
